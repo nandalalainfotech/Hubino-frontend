@@ -1,0 +1,285 @@
+.navbar-spacer {
+	flex: 1 1 auto;
+}
+
+.navbar {
+	z-index: 2;
+}
+
+.navbar-brand {
+	text-decoration: none;
+	color: white;
+}
+
+.navbar-container {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.navbar-is-mobile .navbar {
+	position: fixed;
+	/* Make sure the toolbar will stay on top of the content as it scrolls past. */
+	z-index: 2;
+}
+
+.navbar-sidenav-container {
+	/* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+           causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+	flex: 1;
+}
+
+.navbar-is-mobile .navbar-sidenav-container {
+	/* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+           `<body>` to be our scrolling element for mobile layouts. */
+	flex: 1 0 auto;
+}
+
+/*Set sidenav width*/
+
+::ng-deep .mat-drawer-inner-container::-webkit-scrollbar {
+	display: none;
+}
+
+mat-sidenav {
+	min-width: 180px !important;
+	margin-top: 40px !important;
+	position: fixed !important;
+	overflow: hidden !important;
+	border-right: 1px solid #eee;
+	box-shadow: 6px 0 6px rgba(0, 0, 0, .1);
+	/* background-color:rgb(63, 81, 181); */
+}
+
+/* Set height of wrapper to stop content from moving up & down */
+
+.progress-bar-container {
+	height: 5px;
+}
+
+a.mat-list-item.active {
+	background: rgba(0, 0, 0, .04);
+}
+
+#push-bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+li {
+	list-style-type: none;
+	/* padding: 30px !important; */
+	overflow: hidden !important;
+}
+
+
+
+.material-icons .search {
+	font-size: 30px;
+	font-weight: lighter !important;
+	color: darkgray;
+	overflow: hidden !important;
+	margin-left: 140px;
+}
+
+
+.material-icons .task {
+	font-size: 50px;
+	font-weight: lighter !important;
+	height: 50px;
+	color: darkgray;
+	overflow: hidden !important;
+}
+
+.task {
+	padding: 20px 25px 16px 10px;
+
+}
+
+.task i {
+	text-align: center;
+}
+
+.task li {
+	text-align: center;
+}
+
+.task:hover {
+	background-color: aquamarine;
+}
+
+.tasklist {
+	margin-left: -21px;
+}
+
+.task1 {
+	padding: 19px 21px 21px 25px;
+}
+
+.tasklist1 {
+	margin-left: -21%;
+}
+
+.task1:hover {
+	background-color: aquamarine;
+}
+
+.task2 {
+	padding: 19px 21px 21px 25px;
+}
+
+.tasklist2 {
+	margin-left: -21%;
+}
+
+.task2:hover {
+	background-color: aquamarine;
+}
+
+.task3 {
+	padding: 19px 21px 21px 25px;
+}
+
+.tasklist3 {
+	margin-left: -21%;
+}
+
+.task3:hover {
+	background-color: aquamarine;
+}
+
+.card {
+	width: 92%;
+	height: 155%;
+	background-color: #fff;
+	border-top-left-radius: 1px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 4px;
+	border: none;
+	position: relative !important;
+	margin-top: 30px;
+	margin-left: 20px;
+	/* margin-left: 50px; */
+	margin-bottom: 30px;
+	box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+		0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+		0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+		0 0.125rem 0.1875rem rgba(90 97 105 / 10%);
+
+}
+
+.all {
+	font-size: 18px !important;
+	font-weight: lighter;
+	margin-left: 10px;
+}
+
+.button {
+	display: inline-block;
+	padding: 5px 15px;
+	font-size: 8px;
+	font-family: verdana;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: gray;
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 25px;
+}
+
+.badge-number {
+	position: absolute;
+	inset: 4px 6px auto auto;
+	font-weight: normal;
+	font-size: 11px;
+	padding: 3px 6px;
+}
+
+
+
+
+
+table tr,
+th {
+	padding: 0px 60px 0px 40px;
+	border-bottom: 1px solid #bbb;
+	margin-bottom: -30px !important;
+}
+
+.tabletext {
+	font-family: verdana;
+	font-size: 13px;
+	font-weight: 400 !important;
+	text-align: left;
+	color: dimgray;
+}
+
+.drop::after {
+
+	content: '\276F';
+	font-size: 15px;
+	display: inline-block;
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	padding: 13px;
+
+}
+
+.dot {
+	height: 8px;
+	width: 8px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+::ng-deep .mat-badge-content {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	color: black;
+	background-color: rgb(40, 240, 50);
+	border-radius: 200px;
+}
+
+.mat-icon {
+	font-size: 20px;
+}
+
+
+::ng-deep .mat-badge.hide-text .mat-badge-content {
+	background-color: blue !important;
+	color: white;
+
+	/* right: unset !important; */
+
+}
+
+mat-icon {
+	color: #bbb;
+}
+
+/* .message{
+  color: gray;
+} */
+
+.custom-badge .mat-badge-content {
+	width: auto;
+	text-align: center;
+	border-radius: 7px;
+}
+
+.test:after {
+	content: "...";
+	color: #bbb;
+	font-size: 35px;
+	margin-left: 1000px;
+}

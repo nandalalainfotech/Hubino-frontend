@@ -1,0 +1,96 @@
+<div class="container">
+    <mat-card-content>
+        <form #formDirective="ngForm" [formGroup]="customerForm" (ngSubmit)="onFormSubmit(customerForm.value)">
+            <table>
+                <tr>
+                    <td>
+                        <h2>Customer Information</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tbl1">
+                        <mat-form-field class="demo-full-width">
+                            <input formControlName="customerID" placeholder="customerID" matInput required>
+                        </mat-form-field>
+                        <mat-error *ngIf="customerForm.get('customerID').hasError('required')"></mat-error>
+                    </td>
+                    <td class="tbl1">
+                        <mat-form-field class="demo-full-width">
+                            <input formControlName="cName" matInput placeholder="Customer Name">
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!customerForm.get('cName').value && customerForm.get('cName').touched"></span>
+                        </mat-error>
+
+                    </td>
+                    <td class="tbl1">
+                        <mat-form-field class="demo-full-width">
+                            <input formControlName="emailId" matInput placeholder="EmailId">
+                        </mat-form-field>
+                        <mat-error>
+                            <span
+                                *ngIf="!customerForm.get('emailId').value && customerForm.get('emailId').touched"></span>
+                        </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tbl1">
+                        <mat-form-field class="demo-full-width">
+                            <input formControlName="pNumber" matInput placeholder="Phone Number"
+                                (keypress)="keyPress($event)">
+                        </mat-form-field>
+                        <mat-error>
+                            <span
+                                *ngIf="!customerForm.get('pNumber').value && customerForm.get('pNumber').touched"></span>
+                        </mat-error>
+                    </td>
+                    <td class="tbl1">
+                        <mat-form-field class="demo-full-width">
+                            <input formControlName="gender" matInput placeholder="Gender">
+                        </mat-form-field>
+                        <mat-error>
+                            <span
+                                *ngIf="!customerForm.get('gender').value && customerForm.get('gender').touched"></span>
+                        </mat-error>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td>
+                        <button type="submit" mat-raised-button color="accent" style="margin-right: 50px !important;"
+                            [disabled]="!customerForm.valid">Submit</button>
+                        <button type="reset" mat-raised-button color="accent" (click)="resetForm()">Reset</button>
+                    </td>
+
+                </tr>
+            </table>
+            <br><br><br><br><br><br>
+            <table class="table" class="data">
+                <tr ngclass="btn-primary" class="head">
+                    <th class="tbl2">Customer-ID</th>
+                    <th class="tbl2">Customer-Name</th>
+                    <th class="tbl2">Email Id</th>
+                    <th class="tbl2">Phone-No</th>
+                    <th class="tbl2">Gender</th>
+                    <th class="tbl2">Edit</th>
+                    <th class="tbl2">Delete</th>
+                </tr>
+                <tr *ngFor="let customer of allCustomers | async" class="emp">
+                    <th class="tbl2">{{customer.customerID}}</th>
+                    <th class="tbl2">{{customer.cName}}</th>
+                    <th class="tbl2">{{customer.emailId}}</th>
+                    <th class="tbl2">{{customer.pNumber}}</th>
+                    <th class="tbl2">{{customer.gender}}</th>
+                    <th class="tbl2">
+                        <i class="fas fa-edit" style="color: cornflowerblue;" (click)="edit(customer.customerID)"></i>
+                    </th>
+                    <th class="tbl2">
+                        <i class="fa fa-trash" style="color:red;" (click)="delete(customer.customerID)"></i>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </mat-card-content>
+</div>

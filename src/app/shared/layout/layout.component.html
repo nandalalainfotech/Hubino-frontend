@@ -1,0 +1,86 @@
+<div class="navbar-container" [class.example-is-mobile]="mobileQuery.matches">
+	<!-- Top navbar -->
+	<mat-toolbar class="navbar" style="overflow: hidden;">
+		<a class="navbar-brand" [routerLink]="['/']" matTooltip="Home">
+			<h1 style="color: black;margin-left: 80px;">
+				TASKS
+			</h1>
+		</a>
+		<div>
+			<mat-icon mat-list-icon>
+				<i class="material-icons search">search</i>
+			</mat-icon>
+		</div>
+		<span class="navbar-spacer"></span>
+		<div style="padding: 10px;">
+			<i class="fa fa-envelope" aria-hidden="true"></i>
+		</div>
+		<div style="padding: 10px;" class="drop">
+			<i class="bi bi-person-circle"></i>
+		</div>
+	</mat-toolbar>
+	<mat-sidenav-container class="navbar-sidenav-container">
+		<!-- Side nav -->
+		<mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'"
+			[fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav">
+			<mat-nav-list>
+				<a [routerLink]="['/dashboard']">
+					<ul class="task">
+						<li>
+							<mat-icon mat-list-icon>
+								<i class="material-icons task">event_note</i>
+							</mat-icon>
+							<span mat-line class="tasklist">Task List</span>
+						</li>
+					</ul>
+				</a>
+				<a [routerLink]="['/customers']">
+					<ul class="task" style=" margin-top: -8%">
+						<li>
+							<mat-icon mat-list-icon>
+								<i class="material-icons task">content_paste</i>
+							</mat-icon>
+							<span mat-line class="tasklist">Task Page</span>
+
+						</li>
+					</ul>
+				</a>
+				<ul class="task" style=" margin-top: -8%">
+					<li>
+						<mat-icon mat-list-icon>
+							<i class="material-icons task">content_paste_search</i>
+						</mat-icon>
+						<span mat-line class="tasklist">New Task</span>
+					</li>
+				</ul>
+				<ul class="task1" style=" margin-top: -8%">
+					<li>
+						<mat-icon mat-list-icon style="margin-left: 58px;">
+							<i class="material-icons task">content_paste_go</i>
+						</mat-icon>
+						<span mat-line class="tasklist1">Task Progress</span>
+					</li>
+				</ul>
+				<ul class="task2" style=" margin-top: -8%">
+					<li>
+						<mat-icon mat-list-icon style="margin-left:58px;">
+							<i class="material-icons task">free_cancellation</i>
+						</mat-icon>
+						<span mat-line class="tasklist2">Editing of a Task</span>
+					</li>
+				</ul>
+				<ul class="task3" style=" margin-top: -8%">
+					<li>
+						<mat-icon mat-list-icon style="margin-left:58px;">
+							<i class="material-icons task">event_available</i>
+						</mat-icon>
+						<span mat-line class="tasklist3">Adding a comment</span>
+					</li>
+				</ul>
+			</mat-nav-list>
+		</mat-sidenav>
+		<mat-sidenav-content class="sidenav-content">
+			<router-outlet></router-outlet>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>
